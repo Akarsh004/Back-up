@@ -1,0 +1,173 @@
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_INSTANCE_ST                               **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-08                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-08        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+*******************************************************************************/
+
+REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSTEM_INSTANCE_ST AS 
+ LOCKING ROW FOR ACCESS
+ (SELECT 
+ 	SYSTEM_ID
+	,T2SPUNAME
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,PARTNUMBER
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,PARENT_TEXTM
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,QUANTITY
+	,POSTXT
+	,WEIGHT
+	,UNITOFMEASURE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_INSTANCE_ST);
+ 
+ /*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_INSTANCE_TG                               **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-08                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-08        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+*******************************************************************************/
+
+REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSTEM_INSTANCE_TG AS 
+ LOCKING ROW FOR ACCESS
+ (SELECT 
+	SYSTEM_ID
+	,T2SPUNAME
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,PARTNUMBER
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,PARENT_TEXTM
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,QUANTITY
+	,POSTXT
+	,WEIGHT
+	,UNITOFMEASURE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_INSTANCE_TG);
+
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_Q_PLP_BULK_V                                       **
+**   OBJECT NAME   - MT_RPDM_T2SYSTEM_PDM_ST                                  **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-08                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-08        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+*******************************************************************************/
+
+REPLACE VIEW  GEEDW_Q_PLP_BULK_V.MT_RPDM_T2SYSTEM_PDM_ST AS 
+ LOCKING ROW FOR ACCESS
+ (SELECT 
+	SYSTEM_ID
+	,SYSTEM_NM
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,T2SPUNUMBER
+	,T2POSEIDONNUMBER
+	,SUBJECT
+	,PARENT_TEXTM
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,T2SERIALNUMBER
+	,T2STOREORDERNUMBER
+	,T2SYSTEMCODE
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,FSI_KKS
+	,QUANTITY
+	,POSTXT
+	,FINDNUMBER
+	,POSITIONNO
+	,WEIGHT
+	,UNITOFMEASURE
+	,DOCUMENTTYPE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_Q_PLP_BULK_T.MT_RPDM_T2SYSTEM_PDM_ST);

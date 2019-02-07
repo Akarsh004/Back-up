@@ -1,0 +1,33 @@
+SELECT COUNT(*) FROM TBPLP.PLP_PART_DETAILS;--3133176
+SELECT COUNT(*) FROM TBPLP.PLP_PART_LIFE_DETAILS;--8178891
+SELECT COUNT(*) FROM TBPLP.PLP_DRAWING_LOOKUP ;--19806
+SELECT COUNT(*) FROM TBPLP.PLP_PART_TYPE_LOOKUP;--350
+SELECT COUNT(*) FROM TBPLP.PLP_EPIP_INSPECTION_JOB;--67545
+
+
+
+pgsservicenow
+pgsalpha
+pgswipt
+pgp_ing_borop003_baan   pgp_ing_borop003_baan_drop
+pgp_ing_borop004_baan   pgp_ing_borop004_baan_drop
+pgp_ing_borop005_baan   pgp_ing_borop005_baan_drop
+pwmdmib--in IBAT 3.0    
+sfdc
+
+anuradha.polukonda@ge.com
+
+
+pldb---eedw
+eedw---webcrt(2 way process)
+webcrt---smartshop(2 way process)
+
+
+WEBCRT--->EEDW
+EEDW--->PLP
+
+PLP--->EEDW
+EEDW--->WEBCRT
+
+WEBCRT is a src for PLP
+only completed task will flow

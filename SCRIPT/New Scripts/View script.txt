@@ -1,0 +1,261 @@
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSBOM_ALL_LEVELS                                **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-12                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - VIEW FOR NEW TABLE AS PART OF RPDM DATA SYNC TO EEDW     **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-12       SUMANTA             Initial Coding                      **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+  REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSBOM_ALL_LEVELS AS 
+ LOCKING ROW FOR ACCESS
+  (
+  SELECT
+      LVL AS  BOM_LVL,
+      CLASS_NM ,
+      ITEM_IDNFR  ,
+      REL_TYPE ,
+      T2SPUNUMBER AS  Part_Doc_Number ,
+      T2POSEIDONNUMBER  AS  Plant_EVT_FSI_Number,
+      FSI_KKS,
+      TEXTM,
+      QUANTITY,
+      UNITOFMEASURE   AS  UOM,
+      WEIGHT    AS  Weight_KG,
+      LIFECYCLESTATE  ,
+      FINDNUMBER ,
+      POSITIONNO ,
+      SEQUENCE ,
+      DOCUMENTTYPE ,
+      SUBJECT ,
+      POSTXT ,
+      REMARKM ,
+      CREATION_DATE ,
+      T2SERIALNUMBER   AS  Serial_#,
+      T2STOREORDERNUMBER  AS  Store_Order_#,
+      T2SYSTEMCODE  ,
+      REV_INDEX  ,
+      PROJECTNAME  ,
+      FROZENINDICATOR  ,
+      SUPERSEDED  ,
+      OFFICIAL  ,
+      CHECKEDOUT  ,
+      OWNERNAME  ,
+      CURDBNAME   AS  Current_DB,
+      T2SECURITYSTATE  ,
+      CHILD_OBID,
+      CHILD_NAME  ,
+      CHILD_REV  ,
+      SYSTEM_ID ,
+      SYSTEM_NM ,
+      PARENT_NM,
+      PARENT_TEXTM,
+      DFSORDER,
+      DW_LOAD_DTTM ,
+      DW_CREATED_BY ,
+      DW_UPDATED_DTTM ,
+      DW_UPDATED_BY 
+ 
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSBOM_ALL_LEVELS
+);
+
+ 
+
+ 
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_ST                                    **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-12                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - VIEW FOR NEW TABLE AS PART OF RPDM DATA SYNC TO EEDW     **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-12        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSTEM_PDM_ST AS 
+ LOCKING ROW FOR ACCESS
+  (SELECT
+	SYSTEM_ID
+	,SYSTEM_NM
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,T2SPUNUMBER
+	,T2POSEIDONNUMBER
+	,SUBJECT
+	,PARENT_TEXTM
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,T2SERIALNUMBER
+	,T2STOREORDERNUMBER
+	,T2SYSTEMCODE
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,FSI_KKS
+	,QUANTITY
+	,POSTXT
+	,FINDNUMBER
+	,POSITIONNO
+	,WEIGHT
+	,UNITOFMEASURE
+	,DOCUMENTTYPE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_ST);
+ 
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_GT                                    **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-12                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - VIEW FOR NEW TABLE AS PART OF RPDM DATA SYNC TO EEDW     **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-12        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSTEM_PDM_GT AS 
+ LOCKING ROW FOR ACCESS
+  (SELECT
+	SYSTEM_ID
+	,SYSTEM_NM
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,T2SPUNUMBER
+	,T2POSEIDONNUMBER
+	,SUBJECT
+	,PARENT_TEXTM
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,T2SERIALNUMBER
+	,T2STOREORDERNUMBER
+	,T2SYSTEMCODE
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,FSI_KKS
+	,QUANTITY
+	,POSTXT
+	,FINDNUMBER
+	,POSITIONNO
+	,WEIGHT
+	,UNITOFMEASURE
+	,DOCUMENTTYPE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_GT);
+ 
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_V                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_TG                                    **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-02-12                                               **
+**   INTIAL AUTHOR - AKARSH SINGH                                             **
+**   DESCRIPTION   - VIEW FOR NEW TABLE AS PART OF RPDM DATA SYNC TO EEDW     **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-02-12        AKARSH SINGH              Initial Coding               **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+REPLACE VIEW  GEEDW_PLP_BULK_V.MT_RPDM_SYSTEM_PDM_TG AS 
+ LOCKING ROW FOR ACCESS
+  (SELECT
+	SYSTEM_ID
+	,SYSTEM_NM
+	,PARENT_NM
+	,LVL
+	,REL_TYPE
+	,ITEM_IDNFR
+	,T2SPUNUMBER
+	,T2POSEIDONNUMBER
+	,SUBJECT
+	,PARENT_TEXTM
+	,TEXTM
+	,CREATION_DATE
+	,REMARKM
+	,CLASS_NM
+	,T2SERIALNUMBER
+	,T2STOREORDERNUMBER
+	,T2SYSTEMCODE
+	,REV_INDEX
+	,SEQUENCE
+	,PROJECTNAME
+	,LIFECYCLESTATE
+	,FROZENINDICATOR
+	,SUPERSEDED
+	,OFFICIAL
+	,CHECKEDOUT
+	,OWNERNAME
+	,CURDBNAME
+	,T2SECURITYSTATE
+	,CHILD_OBID
+	,CHILD_NAME
+	,CHILD_REV
+	,FSI_KKS
+	,QUANTITY
+	,POSTXT
+	,FINDNUMBER
+	,POSITIONNO
+	,WEIGHT
+	,UNITOFMEASURE
+	,DOCUMENTTYPE
+	,DFSORDER
+	,DW_LOAD_DTTM
+	,DW_CREATED_BY
+	,DW_UPDATED_DTTM
+	,DW_UPDATED_BY
+ FROM GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_TG);

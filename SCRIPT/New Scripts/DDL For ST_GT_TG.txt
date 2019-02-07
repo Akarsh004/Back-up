@@ -1,0 +1,280 @@
+
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_T                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_ST                             **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-01-11                                               **
+**   INTIAL AUTHOR - SUMANTA                                          **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-01-11       SUMANTA              Initial Coding                **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+
+
+CREATE MULTISET TABLE GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_ST ,NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+     SYSTEM_ID  VARCHAR(75),
+     SYSTEM_NM  VARCHAR(75),
+     PARENT_NM VARCHAR(75),
+      LVL BYTEINT,
+      REL_TYPE VARCHAR(30) ,
+      ITEM_IDNFR VARCHAR(250) ,
+      T2SPUNUMBER VARCHAR(275) ,
+      T2POSEIDONNUMBER VARCHAR(275) ,
+      SUBJECT VARCHAR(275) ,
+      PARENT_TEXTM VARCHAR(275) ,
+      TEXTM VARCHAR(275) ,
+      CREATION_DATE TIMESTAMP(0),
+      REMARKM VARCHAR(275) ,
+      CLASS_NM VARCHAR(30) ,
+      T2SERIALNUMBER VARCHAR(275) ,
+      T2STOREORDERNUMBER VARCHAR(275) ,
+      T2SYSTEMCODE VARCHAR(275) ,
+      REV_INDEX VARCHAR(275) ,
+      SEQUENCE VARCHAR(5) ,
+      PROJECTNAME VARCHAR(30) ,
+      LIFECYCLESTATE VARCHAR(275) ,
+      FROZENINDICATOR VARCHAR(275) ,
+      SUPERSEDED VARCHAR(275) ,
+      OFFICIAL VARCHAR(275) ,
+      CHECKEDOUT VARCHAR(275) ,
+      OWNERNAME VARCHAR(275) ,
+      CURDBNAME VARCHAR(275) ,
+      T2SECURITYSTATE VARCHAR(275) ,
+      CHILD_OBID VARCHAR(24) CHARACTER SET LATIN CASESPECIFIC,
+      CHILD_NAME VARCHAR(275) ,
+      CHILD_REV VARCHAR(275) ,
+      FSI_KKS VARCHAR(275) ,
+      QUANTITY VARCHAR(275) ,
+      POSTXT VARCHAR(275) ,
+      FINDNUMBER VARCHAR(275) ,
+      POSITIONNO VARCHAR(275) ,
+      WEIGHT VARCHAR(275) ,
+      UNITOFMEASURE VARCHAR(275) ,
+      DOCUMENTTYPE VARCHAR(275) ,
+      DFSORDER VARCHAR(500) ,
+      DW_LOAD_DTTM TIMESTAMP(0) TITLE 'DW_LOAD_DTTM' NOT NULL,
+      DW_CREATED_BY VARCHAR(20)  TITLE 'DW_CREATED_BY' NOT NULL,
+      DW_UPDATED_DTTM TIMESTAMP(0) TITLE 'DW_UPDATED_DTTM' NOT NULL,
+      DW_UPDATED_BY VARCHAR(20)  TITLE 'DW_UPDATED_BY' NOT NULL)
+PRIMARY INDEX MT_RPDM_SYSTEM_PDM_ST ( CHILD_OBID );
+----================GT----------=================================
+
+
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_T                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_GT                             **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-01-11                                               **
+**   INTIAL AUTHOR - SUMANTA                                          **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-01-11       SUMANTA              Initial Coding                **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+
+
+CREATE MULTISET TABLE GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_GT ,NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+     SYSTEM_ID  VARCHAR(75),
+     SYSTEM_NM  VARCHAR(75),
+     PARENT_NM VARCHAR(75),
+      LVL BYTEINT,
+      REL_TYPE VARCHAR(30) ,
+      ITEM_IDNFR VARCHAR(250) ,
+      T2SPUNUMBER VARCHAR(275) ,
+      T2POSEIDONNUMBER VARCHAR(275) ,
+      SUBJECT VARCHAR(275) ,
+      PARENT_TEXTM VARCHAR(275) ,
+      TEXTM VARCHAR(275) ,
+      CREATION_DATE TIMESTAMP(0),
+      REMARKM VARCHAR(275) ,
+      CLASS_NM VARCHAR(30) ,
+      T2SERIALNUMBER VARCHAR(275) ,
+      T2STOREORDERNUMBER VARCHAR(275) ,
+      T2SYSTEMCODE VARCHAR(275) ,
+      REV_INDEX VARCHAR(275) ,
+      SEQUENCE VARCHAR(5) ,
+      PROJECTNAME VARCHAR(30) ,
+      LIFECYCLESTATE VARCHAR(275) ,
+      FROZENINDICATOR VARCHAR(275) ,
+      SUPERSEDED VARCHAR(275) ,
+      OFFICIAL VARCHAR(275) ,
+      CHECKEDOUT VARCHAR(275) ,
+      OWNERNAME VARCHAR(275) ,
+      CURDBNAME VARCHAR(275) ,
+      T2SECURITYSTATE VARCHAR(275) ,
+      CHILD_OBID VARCHAR(24) CHARACTER SET LATIN CASESPECIFIC,
+      CHILD_NAME VARCHAR(275) ,
+      CHILD_REV VARCHAR(275) ,
+      FSI_KKS VARCHAR(275) ,
+      QUANTITY VARCHAR(275) ,
+      POSTXT VARCHAR(275) ,
+      FINDNUMBER VARCHAR(275) ,
+      POSITIONNO VARCHAR(275) ,
+      WEIGHT VARCHAR(275) ,
+      UNITOFMEASURE VARCHAR(275) ,
+      DOCUMENTTYPE VARCHAR(275) ,
+      DFSORDER VARCHAR(500) ,
+      DW_LOAD_DTTM TIMESTAMP(0) TITLE 'DW_LOAD_DTTM' NOT NULL,
+      DW_CREATED_BY VARCHAR(20)  TITLE 'DW_CREATED_BY' NOT NULL,
+      DW_UPDATED_DTTM TIMESTAMP(0) TITLE 'DW_UPDATED_DTTM' NOT NULL,
+      DW_UPDATED_BY VARCHAR(20)  TITLE 'DW_UPDATED_BY' NOT NULL)
+PRIMARY INDEX MT_RPDM_SYSTEM_PDM_GT ( CHILD_OBID );
+------------=================TG---==============
+
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_T                                         **
+**   OBJECT NAME   - MT_RPDM_SYSTEM_PDM_TG                             **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-01-11                                               **
+**   INTIAL AUTHOR - SUMANTA                                          **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-01-11       SUMANTA              Initial Coding                **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+
+
+CREATE MULTISET TABLE GEEDW_PLP_BULK_T.MT_RPDM_SYSTEM_PDM_TG ,NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+     SYSTEM_ID  VARCHAR(75),
+     SYSTEM_NM  VARCHAR(75),
+     PARENT_NM VARCHAR(75),
+      LVL BYTEINT,
+      REL_TYPE VARCHAR(30) ,
+      ITEM_IDNFR VARCHAR(250) ,
+      T2SPUNUMBER VARCHAR(275) ,
+      T2POSEIDONNUMBER VARCHAR(275) ,
+      SUBJECT VARCHAR(275) ,
+      PARENT_TEXTM VARCHAR(275) ,
+      TEXTM VARCHAR(275) ,
+      CREATION_DATE TIMESTAMP(0),
+      REMARKM VARCHAR(275) ,
+      CLASS_NM VARCHAR(30) ,
+      T2SERIALNUMBER VARCHAR(275) ,
+      T2STOREORDERNUMBER VARCHAR(275) ,
+      T2SYSTEMCODE VARCHAR(275) ,
+      REV_INDEX VARCHAR(275) ,
+      SEQUENCE VARCHAR(5) ,
+      PROJECTNAME VARCHAR(30) ,
+      LIFECYCLESTATE VARCHAR(275) ,
+      FROZENINDICATOR VARCHAR(275) ,
+      SUPERSEDED VARCHAR(275) ,
+      OFFICIAL VARCHAR(275) ,
+      CHECKEDOUT VARCHAR(275) ,
+      OWNERNAME VARCHAR(275) ,
+      CURDBNAME VARCHAR(275) ,
+      T2SECURITYSTATE VARCHAR(275) ,
+      CHILD_OBID VARCHAR(24) CHARACTER SET LATIN CASESPECIFIC,
+      CHILD_NAME VARCHAR(275) ,
+      CHILD_REV VARCHAR(275) ,
+      FSI_KKS VARCHAR(275) ,
+      QUANTITY VARCHAR(275) ,
+      POSTXT VARCHAR(275) ,
+      FINDNUMBER VARCHAR(275) ,
+      POSITIONNO VARCHAR(275) ,
+      WEIGHT VARCHAR(275) ,
+      UNITOFMEASURE VARCHAR(275) ,
+      DOCUMENTTYPE VARCHAR(275) ,
+      DFSORDER VARCHAR(500) ,
+      DW_LOAD_DTTM TIMESTAMP(0) TITLE 'DW_LOAD_DTTM' NOT NULL,
+      DW_CREATED_BY VARCHAR(20)  TITLE 'DW_CREATED_BY' NOT NULL,
+      DW_UPDATED_DTTM TIMESTAMP(0) TITLE 'DW_UPDATED_DTTM' NOT NULL,
+      DW_UPDATED_BY VARCHAR(20)  TITLE 'DW_UPDATED_BY' NOT NULL)
+PRIMARY INDEX MT_RPDM_SYSTEM_PDM_TG ( CHILD_OBID );
+------------=========MT_RPDM_SYSBOM_ALL_LEVELS-===========================
+
+/*******************************************************************************
+**   DATABASENAME  - GEEDW_PLP_BULK_T                                         **
+**   OBJECT NAME   - MT_RPDM_SYSBOM_ALL_LEVELS                             **
+**   PROJECT       - RPDM-EEDW INTEGRATION                                    **
+**   CREATION DATE - 2018-01-11                                               **
+**   INTIAL AUTHOR - SUMANTA                                          **
+**   DESCRIPTION   - Materialised table view creation for MT table            **
+**                                                                            **
+******************* ----------   Change Log   ---------- ***********************
+**   Change DATE        Developer Name            Change Desc                 **
+**   -----------      --------------    --------------------------------------**
+**   2018-01-11       SUMANTA              Initial Coding                **
+**                                                                            **
+**                                                                            **
+*******************************************************************************/
+
+
+CREATE MULTISET TABLE GEEDW_PLP_BULK_T.MT_RPDM_SYSBOM_ALL_LEVELS ,NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+     SYSTEM_ID  VARCHAR(75),
+     SYSTEM_NM  VARCHAR(75),
+     PARENT_NM VARCHAR(75),
+      LVL BYTEINT,
+      REL_TYPE VARCHAR(30) ,
+      ITEM_IDNFR VARCHAR(250) ,
+      T2SPUNUMBER VARCHAR(275) ,
+      T2POSEIDONNUMBER VARCHAR(275) ,
+      SUBJECT VARCHAR(275) ,
+      PARENT_TEXTM VARCHAR(275) ,
+      TEXTM VARCHAR(275) ,
+      CREATION_DATE TIMESTAMP(0),
+      REMARKM VARCHAR(275) ,
+      CLASS_NM VARCHAR(30) ,
+      T2SERIALNUMBER VARCHAR(275) ,
+      T2STOREORDERNUMBER VARCHAR(275) ,
+      T2SYSTEMCODE VARCHAR(275) ,
+      REV_INDEX VARCHAR(275) ,
+      SEQUENCE VARCHAR(5) ,
+      PROJECTNAME VARCHAR(30) ,
+      LIFECYCLESTATE VARCHAR(275) ,
+      FROZENINDICATOR VARCHAR(275) ,
+      SUPERSEDED VARCHAR(275) ,
+      OFFICIAL VARCHAR(275) ,
+      CHECKEDOUT VARCHAR(275) ,
+      OWNERNAME VARCHAR(275) ,
+      CURDBNAME VARCHAR(275) ,
+      T2SECURITYSTATE VARCHAR(275) ,
+      CHILD_OBID VARCHAR(24) CHARACTER SET LATIN CASESPECIFIC,
+      CHILD_NAME VARCHAR(275) ,
+      CHILD_REV VARCHAR(275) ,
+      FSI_KKS VARCHAR(275) ,
+      QUANTITY VARCHAR(275) ,
+      POSTXT VARCHAR(275) ,
+      FINDNUMBER VARCHAR(275) ,
+      POSITIONNO VARCHAR(275) ,
+      WEIGHT VARCHAR(275) ,
+      UNITOFMEASURE VARCHAR(275) ,
+      DOCUMENTTYPE VARCHAR(275) ,
+      DFSORDER VARCHAR(500) ,
+      DW_LOAD_DTTM TIMESTAMP(0) TITLE 'DW_LOAD_DTTM' NOT NULL,
+      DW_CREATED_BY VARCHAR(20)  TITLE 'DW_CREATED_BY' NOT NULL,
+      DW_UPDATED_DTTM TIMESTAMP(0) TITLE 'DW_UPDATED_DTTM' NOT NULL,
+      DW_UPDATED_BY VARCHAR(20)  TITLE 'DW_UPDATED_BY' NOT NULL)
+PRIMARY INDEX MT_RPDM_SYSBOM_ALL_LEVELS ( SYSTEM_ID );
