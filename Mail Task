@@ -1,0 +1,22 @@
+(cat /data/informatica/ETCOE/EEDW01/Config/WLYECCN_MAIL_CONTENT.txt) | mailx -s "WLYECCN" -a /data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.zip "akarsh.singh@ge.com" 
+
+/data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.zip WLYECCN.zip
+
+
+(cat /data/informatica/ETCOE/ENPPR01/Scripts/MAIL_CONTENT.sh) | mailx -s “eNPP-Rejected-EIs” -a /data/informatica/ETCOE/ENPPR01/TgtFiles/tgt_reject_file1.out snl2etcoecustomappsupport@ge.com
+
+
+
+zip /data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.zip /data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.txt
+(cat /data/informatica/ETCOE/EEDW01/Config/WLYECCN_MAIL_CONTENT.txt) | mailx -s "WLYECCN" -a /data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.zip -c "akarsh.singh@ge.com","tanwir.shaikh@ge.com" "sumanta.bhujabal@ge.com" "prashant.chaubey@ge.com" "Lakshmanrao.D@ge.com"
+
+
+chmod 777 /data/informatica/ETCOE/EEDW01/SrcFiles/WLYECCN.zip
+
+
+(cat /data/informatica/ETCOE/ENPPR01/Scripts/MAIL_CONTENT.sh) | mailx -s "eNPP-SSS R12 Integration-Rejected EIs" -a /data/informatica/ETCOE/ENPPR01/TgtFiles/tgt_reject_file1.out -c "snl2etcoecustomappsupport@ge.com"
+
+
+
+
+(cat /data/informatica/ETCOE/ENPPR01/Scripts/MAIL_CONTENT.sh) | mailx -s "eNPP-SSS R12 Integration-Rejected EIs" -a /data/informatica/ETCOE/ENPPR01/TgtFiles/tgt_reject_file1.out "snl2etcoecustomappsupport@ge.com"
