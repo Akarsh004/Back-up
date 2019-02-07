@@ -1,0 +1,100 @@
+CREATE MULTISET TABLE GEEDW_D_PLP_S.CDR_TEMP_MLI_LOAD ,NO FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO
+     (
+	Requirement_Name Varchar(512),
+	Requirement_Description Varchar(512),
+	CEI_Name Varchar(512),
+	CEI_Display_Name Varchar(512),
+	MLI_Name Varchar(512),
+	MLI_Description Varchar(512),
+	Applicability_Symbol Varchar(512),
+	Modification_Description Varchar(512),
+	Special_Notes Varchar(512),
+	Repair_Text Varchar(512),
+	Field_Text Varchar(512),
+	Special_Tools Varchar(512),
+	Service_Documents Varchar(512),
+	FMI_Text Varchar(512)
+      )
+PRIMARY INDEX CDR_TEMP_MLI_LOAD ( CEI_Name);
+
+
+fastload<<here
+
+dateform ANSIDATE;
+
+errlimit 1000000;
+tenacity 4;        
+sessions 1;
+sleep 6;
+
+LOGON GEEDW_DEV_PLP.PW.GE.COM/GEEDW_D_PLP_ETL,gueiuserI4a3;
+
+DROP TABLE GEEDW_D_PLP_S.ET_CDR_TEMP_MLI_LOAD ; 
+DROP TABLE GEEDW_D_PLP_S.UV_CDR_TEMP_MLI_LOAD ; 
+SET RECORD VARTEXT ",";
+
+define
+	Requirement_Name (Varchar(512), NULLIF = '*'),
+	Requirement_Description (Varchar(512), NULLIF = '*'),
+	CEI_Name (Varchar(512), NULLIF = '*'),
+	CEI_Display_Name (Varchar(512), NULLIF = '*'),
+	MLI_Name (Varchar(512), NULLIF = '*'),
+	MLI_Description (Varchar(512), NULLIF = '*'),
+	Applicability_Symbol (Varchar(512), NULLIF = '*'),
+	Modification_Description (Varchar(512), NULLIF = '*'),
+	Special_Notes (Varchar(512), NULLIF = '*'),
+	Repair_Text (Varchar(512), NULLIF = '*'),
+	Field_Text (Varchar(512), NULLIF = '*'),
+	Special_Tools (Varchar(512), NULLIF = '*'),
+	Service_Documents (Varchar(512), NULLIF = '*'),
+	FMI_Text (Varchar(512), NULLIF = '*')
+file=/data/informatica/ETCOE/EEDW01/SrcFiles/Missing0010.csv;
+
+show;
+
+begin loading GEEDW_D_PLP_S.CDR_TEMP_MLI_LOAD errorfiles GEEDW_D_PLP_S.ET_CDR_TEMP_MLI_LOAD,  GEEDW_D_PLP_S.UV_CDR_TEMP_MLI_LOAD
+checkpoint 0 ;
+
+insert into GEEDW_D_PLP_S.CDR_TEMP_MLI_LOAD ( 
+	Requirement_Name,
+	Requirement_Description,
+	CEI_Name,
+	CEI_Display_Name,
+	MLI_Name,
+	MLI_Description,
+	Applicability_Symbol,
+	Modification_Description,
+	Special_Notes,
+	Repair_Text,
+	Field_Text,
+	Special_Tools,
+	Service_Documents,
+	FMI_Text  
+) VALUES ( 
+	:Requirement_Name,
+	:Requirement_Description,
+	:CEI_Name,
+	:CEI_Display_Name,
+	:MLI_Name,
+	:MLI_Description,
+	:Applicability_Symbol,
+	:Modification_Description,
+	:Special_Notes,
+	:Repair_Text,
+	:Field_Text,
+	:Special_Tools,
+	:Service_Documents,
+	:FMI_Text
+) ; 
+
+end loading;
+
+logoff;
+
+here
+
+
